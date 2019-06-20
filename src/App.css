@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+
 .app {
     margin: 0;
     padding: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: 'Oswald', sans-serif;
 }
 
 .app-header {
@@ -19,6 +22,15 @@
 .app-title {
     margin: 0;
     padding: 0;
+    text-shadow: 1px 1px 2px black;
+}
+
+.app-subtitle {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px black;
 }
 
 .app-main {
