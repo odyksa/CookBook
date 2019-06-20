@@ -1,10 +1,13 @@
 .app {
     margin: 0;
     padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .app-header {
-    background: #22226b;
+    background: #4267b2;
     color: #ffffff;
     text-align: center;
     min-height: 100px;
@@ -16,4 +19,19 @@
 .app-title {
     margin: 0;
     padding: 0;
+}
+
+.app-main {
+    background: #f2f2f2;
+    flex-grow: 1;
+}
+
+.app-footer {
+    background: #4267b2;
+    color: #ffffff;
+    text-align: center;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
