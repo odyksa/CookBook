@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
 import './Recipes.css';
 
 export default function Recipes(props) {
@@ -24,7 +27,11 @@ export default function Recipes(props) {
                             {recipe.publisher.length > 25 ? `${recipe.publisher.substring(0, 24)}...` : `${recipe.publisher}`}
                         </span>
                     </p>
-                    <button className="recipe__details">View recipe</button>
+                    <Link 
+                        to={{ pathname: `/recipe/${recipe.recipe_id}` }} className="recipe__details"
+                    >
+                        View recipe
+                    </Link>
                 </footer>
             </div>
         );
@@ -36,3 +43,7 @@ export default function Recipes(props) {
         </section>
     );
 }
+
+Recipes.propTypes = {
+    getRecipes: PropTypes.array
+};

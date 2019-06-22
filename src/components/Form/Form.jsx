@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './Form.css';
  
@@ -10,3 +11,7 @@ export default function Form(props) {
         </form>
     );
 }
+
+Form.propTypes = {
+    getRecipes: PropTypes.func.isRequired
+};
