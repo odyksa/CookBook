@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Form from './components/Form';
-import Recipes from './components/Recipes';
+import './App.css';
+import HomePage from './pages/HomePage';
+import RecipePage from './pages/RecipePage';
 
 class App extends Component {
     state = {
@@ -19,31 +20,62 @@ class App extends Component {
         this.setState({ recipes: data.recipes });
     }
 
+    componentDidMount = () => {
+        const recipesFromSessionStorage = window.sessionStorage.getItem("recipes");
+        const recipes = JSON.parse(recipesFromSessionStorage);
+
+        if (recipes) {
+            this.setState({ recipes });
+        }
+    }
+
+    componentDidUpdate = () => {
+        const recipesJSON = JSON.stringify(this.state.recipes);
+        window.sessionStorage.setItem("recipes", recipesJSON);
+    }
+
     render() {
         return (
-            <div className="app">
-                {/* header */}
-                <header className="app-header">
-                    <hgroup>
-                        <h1 className="app-title">CookBook</h1>
-                        <h2 className="app-subtitle">Search. Cook. Eat.</h2>
-                    </hgroup>
-                </header>
-                {/* /header */}
+            <BrowserRouter>
+                <div className="app">
+                    {/* header */}
+                    <header className="app-header">
+                        <hgroup>
+                            <h1 className="app-title">CookBook</h1>
+                            <h2 className="app-subtitle">Search. Cook. Eat.</h2>
+                        </hgroup>
+                    </header>
+                    {/* /header */}
 
-                {/* main */}
-                <main className="app-main">
-                    <Form getRecipes={this.getRecipes} />
-                    <Recipes recipes={this.state.recipes} />
-                </main>
-                {/* /main */}
+                    {/* main */}
+                    <main className="app-main">
+                        <Switch>
+                            <Route
+                                path="/"
+                                exact
+                                render={props =>
+                                    <HomePage
+                                        getRecipes={this.getRecipes}
+                                        recipes={this.state.recipes}
+                                        {...props}
+                                    />
+                                }
+                            />
+                            <Route
+                                path="/recipe/:recipeID"
+                                render={props => <RecipePage {...props} />}
+                            />
+                        </Switch>
+                    </main>
+                    {/* /main */}
 
-                {/* footer */}
-                <footer className="app-footer">
-                    footer
-                </footer>
-                {/* /footer */}
-            </div>
+                    {/* footer */}
+                    <footer className="app-footer">
+                        <p>Search. Cook. Eat.</p>
+                    </footer>
+                    {/* /footer */}
+                </div>
+            </BrowserRouter>
         );
     }
 }

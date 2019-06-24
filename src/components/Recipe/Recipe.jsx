@@ -1,13 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import './Recipe.css';
 
 const Recipe = props => {
-    const { recipeID } = props.match.params;
-    console.log(recipeID);
-    const recipe = props.location.state.recipes.find(recipe => recipe.recipe_id === props.match.params.recipeID);
-
+    const { recipe } = props;
     console.log(recipe);
-    return(
-        <div>d</div>
+
+    return (
+        <article className="recipe-card">
+            <img 
+                src={recipe.image_url} 
+                alt={recipe.title}
+                className="recipe-card__img"
+            />
+            <h3 className="recipe-card__title">{recipe.title}</h3>
+            <p className="recipe-card__publisher">
+                Publisher: 
+                <span>{recipe.publisher}</span>
+            </p>
+            <Link to="/" className="recipe-card__button">Back</Link>
+        </article>
+
     )
 }
 

@@ -1,0 +1,45 @@
+.recipe-card {
+    width: 50%;
+    margin: 20px auto 0 auto;
+}
+
+.recipe-card__title {
+    color: #e74c3c;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    padding: 10px 0;
+}
+
+.recipe-card__img {
+    width: 100%;
+}
+
+.recipe-card__publisher {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.recipe-card__publisher span {
+    letter-spacing: normal;
+}
+
+.recipe-card__button {
+    padding: 10px 0;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    transition: all 0.3s ease-in-out;
+    color: #e74c3c;
+    background: transparent;
+    border: 2px solid #e74c3c;
+    width: 88px;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.recipe-card__button:hover {
+    color: #ffffff;
+    background: #e74c3c;
+}
