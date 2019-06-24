@@ -19,6 +19,15 @@ const Recipe = props => {
                 Publisher: 
                 <span>{recipe.publisher}</span>
             </p>
+            <p className="recipe-card__publisher">
+                Link: 
+                <a 
+                    href={recipe.publisher_url} className="recipe-card__publisher-link"
+                >
+                    {recipe.publisher}
+                </a>
+            </p>
+            <p className="recipe-card__rank">Social rank: <span>{recipe.social_rank.toFixed(2)}</span></p>
             <Link to="/" className="recipe-card__button">Back</Link>
         </article>
 

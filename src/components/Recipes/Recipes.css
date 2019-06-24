@@ -79,3 +79,9 @@
 .recipe__footer span {
     letter-spacing: normal;
 }
+
+@media (max-width: 1024px) {
+    .recipes {
+        justify-content: space-around;
+    }
+}
