@@ -51,6 +51,8 @@
     background: #e74c3c; 
     border: 2px solid #e74c3c;
     width: 88px;
+    text-decoration: none;
+    text-align: center;
 }
 
 .recipe__details:hover {
