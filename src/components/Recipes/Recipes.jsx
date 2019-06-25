@@ -45,7 +45,9 @@ export default function Recipes(props) {
 
     return (
         <section className="recipes">
-            {recipes}
+            {
+                props.error ? <p className="app-error">Unfortunately, no such recipe :-(</p> : recipes
+            }
         </section>
     );
 }

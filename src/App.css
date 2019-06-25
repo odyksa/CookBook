@@ -57,6 +57,13 @@
     text-shadow: 1px 1px 2px black;
 }
 
+.app-error {
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    color: red;
+}
+
 .load-more-btn {
     border: 2px solid #4267b2;
     padding: 17px 30px;
@@ -75,4 +82,10 @@
 .load-more-btn:hover {
     background: #4267b2;
     color: #ffffff ;
+}
+
+.app-not-found-page {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 30px;
 }
