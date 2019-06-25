@@ -36,7 +36,8 @@
 .app-main {
     flex-grow: 1;
     max-width: 1600px;
-    margin-bottom: 70px;
+    margin: 0 15px 70px 15px;
+    
 }
 
 .app-footer {
