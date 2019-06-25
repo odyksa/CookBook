@@ -21,7 +21,7 @@ const Recipe = props => {
             <p className="recipe-card__publisher">
                 Link: 
                 <a 
-                    href={recipe.publisher_url} className="recipe-card__publisher-link"
+                    href={recipe.source_url} className="recipe-card__publisher-link"
                 >
                     {recipe.publisher}
                 </a>
