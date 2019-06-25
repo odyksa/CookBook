@@ -7,14 +7,15 @@ import RecipePage from './pages/RecipePage';
 
 class App extends Component {
     state = {
-        recipes: []
+        recipes: [],
+        items: 9
     };
 
     getRecipes = async (ev) => {
         ev.preventDefault();
         const recipeValue = ev.target.elements.recipeValue.value;
         const API_KEY = 'a40b8bb0c61f559d98cc93ce9b938549';
-        const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${recipeValue}&count=9`);
+        const api_call = await fetch(`https://www.food2fork.com/api/search?key=${API_KEY}&q=${recipeValue}&count=30`);
 
         const data = await api_call.json();
         this.setState({ recipes: data.recipes });
@@ -32,6 +33,12 @@ class App extends Component {
     componentDidUpdate = () => {
         const recipesJSON = JSON.stringify(this.state.recipes);
         window.sessionStorage.setItem("recipes", recipesJSON);
+    }
+
+    loadMore = () => {
+        this.setState({ 
+            items: this.state.items + 9
+        });
     }
 
     render() {
@@ -57,6 +64,8 @@ class App extends Component {
                                     <HomePage
                                         getRecipes={this.getRecipes}
                                         recipes={this.state.recipes}
+                                        items={this.state.items}
+                                        loadMore={this.loadMore}
                                         {...props}
                                     />
                                 }

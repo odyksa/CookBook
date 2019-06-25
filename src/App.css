@@ -56,3 +56,23 @@
     font-weight: 400;
     text-shadow: 1px 1px 2px black;
 }
+
+.load-more-btn {
+    border: 2px solid #4267b2;
+    padding: 17px 30px;
+    cursor: pointer;
+    border-radius: 1px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    transition: all 0.3s ease-in-out;
+    background: transparent;
+    color: #4267b2;
+    margin: 30px auto auto auto;
+    display: block;
+}
+
+.load-more-btn:hover {
+    background: #4267b2;
+    color: #ffffff ;
+}

@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import './Recipes.css';
 
 export default function Recipes(props) {
-    const recipes = props.recipes.map(recipe => {
+    const recipes = props.recipes.slice(0, props.items).map(recipe => {
         return (
-            <div className="recipe" key={recipe.recipe_id}>
+            <div className="recipe fade-in" key={recipe.recipe_id}>
                 <h3
                     className="recipe__title"
                 >

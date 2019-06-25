@@ -7,7 +7,10 @@ const HomePage = props => {
     return(
         <Fragment>
             <Form getRecipes={props.getRecipes}/>
-            <Recipes recipes={props.recipes}/>
+            <Recipes recipes={props.recipes} items={props.items}/>
+            {
+                props.items < props.recipes.length && <button onClick={props.loadMore} className="load-more-btn">Load more</button>
+            }            
         </Fragment>
     );
 };
