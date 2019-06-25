@@ -5,7 +5,6 @@ import './Recipe.css';
 
 const Recipe = props => {
     const { recipe } = props;
-    console.log(recipe);
 
     return (
         <article className="recipe-card">
